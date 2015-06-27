@@ -1,0 +1,10 @@
+﻿<h3 style="display: inline-block;">Favorites</h3>&nbsp;<a ng-disabled="isFetching"
+                                                          ng-click="fetchFavorites()" 
+                                                          class="btn btn-default">Refresh</a>
+<img ng-show="isFetching" src="/Assets/preloader.gif" />
+<ul ng-if="!isFetching" class="list-group" style="margin-top: 10px;">
+    <li ng-repeat="favorite in favorites" class="list-group-item">
+        <a target="_new" href="{{favorite.link}}">{{favorite.title}}</a>
+        <span class="badge">{{favorite.stars}} Stars</span>
+    </li>
+</ul>
